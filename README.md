@@ -45,8 +45,6 @@
 
 Расширение - файл `mmaextention-1.0.1.vsix`. Для его установки во вкладке `Extentions` выберите `Install from VSIX`  и файл.
 
-<!--[скриншот](ссылка_на_скриншот)-->
-
 ## Синтаксис языка и примеры использования
 
 ### Операции
@@ -96,6 +94,7 @@ lambda factorial [_x] = { if eq(   _x, 1         ) => 1 else mul(_x, $ factorial
 
 printfn $ factorial [7]
 printfn $ factorial [8]
+
 ```
 
 
@@ -108,15 +107,19 @@ printfn $ factorial [8]
 
 Для каталогов реализованы базовые операции, позволяющие делать все что угодно: 
 - `catalog_name с.first` - возвращает первый элемент списка
+
 ```
 printfn catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") c.first
+
 ```
 
 - `catalog_name с.last` - возвращает хвост списка
+  
 ```
 detect list = catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") 
 
 printfn list c.tail
+
 ```
 
 - `catalog_name_1 '<->' catalog_name_2` - конкатенация каталогов.
@@ -152,6 +155,7 @@ $ check [10]
 detect x = ReadFromFile "tests.mma"
 
 printfn x
+
 ```
 #### Запись
 ```
@@ -159,6 +163,7 @@ WriteToFile "tests.mma" "Hello World!"
 
 detect x = ReadFromFile "tests.mma"
 printfn x
+
 ```
 
 [В папке примеров](docs/examples/)
@@ -174,4 +179,5 @@ printfn x
 |-----------------|------------------------------|
 | Михаил Губарев  |Создание интерпретатора и структуры AST|
 | Максим Заславцев| Создание парсера и синтаксиса языка|
-| Андрей Забелкин | Расширение для VS code, написание стандартной библиотеки |
+| Андрей Забелкин | Создания расширение для VS code и документации |
+
