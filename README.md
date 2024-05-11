@@ -158,24 +158,26 @@ printfn catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") cfirst
 ```
 detect list = catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") 
 
-
 printfn list ctail
 
 ```
 
-
 - `catalog_name_1' <-> 'catalog_name_2` - конкатенация каталогов.
+
 ```
 detect list = catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") <-> catalog (a | b | c) 
 
 printfn list
 ```
+
 Или так
+
 ```
 printfn catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") <-> catalog (a | b | c)
 ```
 
 - `element' ->> 'catalog_name` - добавление элемента в список.
+
 ```
 printfn 4 ->> catalog(-5 | 10 | 2)
 ```
@@ -199,6 +201,7 @@ $ check [10]
 Для операций с файлами существуют команды `ReadFromFile` и `WriteToFile`. В аргументах функции принимают: `ReadFromFile path/to/file` и `WriteToFile path/to/file string`. Пример синтаксиса работы с файлами: 
 
 #### Чтение
+
 ```
 detect x = ReadFromFile "tests.mma"
 
@@ -206,6 +209,7 @@ printfn x
 
 ```
 #### Запись
+
 ```
 WriteToFile "tests.mma" "Hello World!"
 
@@ -224,6 +228,7 @@ printfn x
 `catalog_search_by [catalog, function, start_value]` - поиск в списке последнего элемента, удволетворяющего фунции
 
 Пример использования :
+
 ```
 detect x = catalog (1 | 2 | 3 | 55)
 lambda test [a, b] = {
@@ -238,6 +243,7 @@ printfn $ catalog_search_by [x, test, 0]
 `factorial [n]` - нахождение факториала числа
 
 Пример использования :
+
 ```
 printfn $ factorial [5]
 
@@ -246,6 +252,7 @@ printfn $ factorial [5]
 `pow [2, 10]` - возведение числа в степень
 
 Пример использования :
+
 ```
 printfn $ pow [2, 10]
 ```
@@ -254,6 +261,7 @@ printfn $ pow [2, 10]
 `filter [function, catalog]` - составление нового списка, где элемнты удволетворяют условию `function`
 
 Пример использования :
+
 ```
 lambda less_5 [x] = { lt(x, 5) }
 
@@ -270,6 +278,7 @@ printfn $ sum_catalog [catalog(0 | 2 | 4 | 6)]
 `catalog_fold [catalog, funtion, acc]` - свёртка каталога
 
 Пример использования :
+
 ```
 lambda mult [a, b] = 
 {
@@ -282,6 +291,7 @@ printfn $ catalog_fold [catalog(1 | 2 | 4 | 6), mult, 1]
 `map [funcion, catalog]` - получение нового каталога, где к каждому элементу исходного применена функция
 
 Пример использования :
+
 ```
 lambda square [x] = { mul(x, x) }
 
@@ -291,6 +301,7 @@ printfn $ map [square, catalog (1 | 2 | 10)]
 `at_index [catalog, ind]` - поиск элемента по индексу
 
 Пример использования :
+
 ```
 printfn $ at_index [catalog (1 | 52 | 10), 1]
 
@@ -298,6 +309,7 @@ printfn $ at_index [catalog (1 | 52 | 10), 1]
 `get_length [catalog]` - поиск длины списка
 
 Пример использования :
+
 ```
 printfn $ get_length [catalog (1 | 52 | 10 | true | x)]
 ```
