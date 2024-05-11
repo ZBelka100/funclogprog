@@ -162,7 +162,7 @@ printfn list ctail
 
 ```
 
-- `catalog_name_1' <-> 'catalog_name_2` - конкатенация каталогов.
+- 'catalog_name_1' <-> 'catalog_name_2' - конкатенация каталогов
 
 ```
 detect list = catalog (1 | 2 | x | catalog (5 | 10) | "Hi!") <-> catalog (a | b | c) 
